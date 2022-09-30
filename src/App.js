@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 import './App.css';
-
+import Layout from './component/layout/Layout'
+import LandingPage from './page/landing/LandingPage'
+import ErrorPage from './page/error/ErrorPage'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' element={<AppLayout />}>
+        <Route index element={<LandingPage />} />
+        {/* <Route path="blog" element={<BlogPage />} /> */}
+
+        <Route path='*' element={<ErrorPage />} />
+      </Route>
+    </Routes>
   );
+}
+const AppLayout = () => {
+  return(
+    <Layout>
+      <Outlet/>
+    </Layout>
+  )
 }
 
 export default App;
