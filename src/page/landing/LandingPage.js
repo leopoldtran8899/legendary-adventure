@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { CircuitSVG } from './Circuit'
-import { StyledCircuitContainer, StyledLabel } from './StyledLandingPage';
+import { StyledCircuitContainer, StyledLabel } from './LandingPageStyled';
 
 export default class LandingPage extends Component {
 

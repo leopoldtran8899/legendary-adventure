@@ -3,12 +3,13 @@ import './App.css';
 import Layout from './component/layout/Layout'
 import LandingPage from './page/landing/LandingPage'
 import ErrorPage from './page/error/ErrorPage'
+import AboutPage from "./page/about/AboutPage";
 function App() {
   return (
     <Routes>
       <Route path='/' element={<AppLayout />}>
         <Route index element={<LandingPage />} />
-        {/* <Route path="blog" element={<BlogPage />} /> */}
+        <Route path="about" element={<AboutPage />} />
 
         <Route path='*' element={<ErrorPage />} />
       </Route>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { StyledCircuit } from './StyledLandingPage'
+import { StyledCircuit } from './LandingPageStyled'
 export const CircuitSVG = () => {
 
   return (
