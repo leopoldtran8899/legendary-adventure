@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const StyledAboutContainer = styled.div`
   height: 100vh;
@@ -22,13 +22,40 @@ export const StyledAboutSection = styled.section`
   @media (min-height: 30em) {
     height: 100vh;
   }
-  & #about-section-1 {
-    background-color: yellow;
+  
+`;
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 `;
 export const StyledAboutTitle = styled.h1`
   position: fixed;
-  ${StyledAboutSection}:hover & {
-    color: white;
-  }
+  color: yellow;
+  border: 1px solid yellow;
+  z-index: 100;
+  /* animation: ${rotate} 2s linear infinite; */
+  ${props => props.position === 'normal' ? TitleFront: TitleLeft}
+  /* animation: ${props => props.position == 'normal'} */
+
+  font-size: 2rem;
+  top: 30vh;
+  left: 20vw;
+`;
+
+const TitleFront = `
+  top: 30vh;
+  left: 20vw;
+  font-size: 2rem;
+`;
+
+const TitleLeft = `
+  transform: rotate(-90deg);
+  left: 1vw;
+  bottom: 10px;
+
 `

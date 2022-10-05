@@ -6,6 +6,14 @@ import { StyledAboutContainer, StyledAboutSection, StyledAboutTitle } from './Ab
 // const StyledAboutSectionWithObserver = withIntersectionObserver(StyledAboutSection)
 
 export default class AboutPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      titleStyle: {
+        position: 'normal'
+      }
+    }
+  }
   onHide = () => {
     console.log('hide')
   }
@@ -13,27 +21,40 @@ export default class AboutPage extends Component {
     console.log('show')
   }
   onIntersect = () => {
-    // console.log('intersec')
+    console.log('intersec')
+  }
+  changeTitlePosition = () => {
+    this.setState(state => ({
+      ...state,
+      titleStyle: {
+        ...state.titleStyle,
+        position: 'move'
+      }
+    }))
+    console.log("click")
   }
   render() {
     return (
       <StyledAboutContainer>
         {/* <StyledAboutTitle>Tien Tran (Leopold)</StyledAboutTitle> */}
-        <IntersectionVisible id='about-section-1'
-          WrappedComponent={StyledAboutSection}
-          onShow={this.onShow}
-          onHide={this.onHide}
-          onIntersect={this.onIntersect}
-        >
-          Section 1
-        </IntersectionVisible>
-        <StyledAboutSection id='about-section-2'>
-          Section 2
+
+          <IntersectionVisible
+            id='about-section-1'
+            WrappedComponent={StyledAboutTitle}
+            onShow={this.onShow}
+            onHide={this.onHide}
+            onIntersect={this.onIntersect}
+            styles={this.state.titleStyle}
+          >
+            Leopold
+          </IntersectionVisible>
+        <StyledAboutSection id='about-section-1'>
+          Section 1 
+          <button onClick={this.changeTitlePosition}>Click</button>
         </StyledAboutSection>
-        <StyledAboutSection id='about-section-3'>
-          Section 3
-        </StyledAboutSection>
+        <StyledAboutSection id='about-section-2'>Section 2</StyledAboutSection>
+        <StyledAboutSection id='about-section-3'>Section 3</StyledAboutSection>
       </StyledAboutContainer>
-    )
+    );
   }
 }

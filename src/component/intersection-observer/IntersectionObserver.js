@@ -75,7 +75,7 @@ export default class IntersectionVisible extends Component {
    */
   render() {
     const { WrappedComponent } = this.props
-    return <WrappedComponent  ref={node => this.node = node}>
+    return <WrappedComponent  ref={node => this.node = node} {...this.props.styles}>
       {this.props.children}
     </WrappedComponent>;
   }
