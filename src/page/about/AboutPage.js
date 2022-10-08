@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import  IntersectionVisible  from '../../component/intersection-observer/IntersectionObserver'
-import { StyledAboutContainer, StyledAboutSection, StyledAboutTitle } from './AboutPageStyled'
+import { StyledAboutContainer, StyledAboutSection, StyledAboutTitle, ObserverHook, StyledAboutBar, Avatar } from './AboutPageStyled'
 
 // const StyledAboutSectionWithObserver = withIntersectionObserver(StyledAboutSection)
 
@@ -16,43 +16,53 @@ export default class AboutPage extends Component {
   }
   onHide = () => {
     console.log('hide')
-    // this.changeTitlePosition()
-  }
-  onShow = () => {
-    console.log('show')
-    // this.changeTitlePosition()
-  }
-  onIntersect = () => {
-    console.log('intersec')
-  }
-  changeTitlePosition = () => {
     this.setState(state => ({
       ...state,
       titleStyle: {
         ...state.titleStyle,
-        show: !state.titleStyle.show
+        show: false
       }
     }))
-    console.log(this.state.titleStyle.show)
+  }
+  onShow = () => {
+    console.log('show')
+    this.setState(state => ({
+      ...state,
+      titleStyle: {
+        ...state.titleStyle,
+        show: true
+      }
+    }))
+  }
+  onIntersect = () => {
+    console.log('intersec')
   }
   render() {
     return (
       <StyledAboutContainer>
         {/* <StyledAboutTitle>Tien Tran (Leopold)</StyledAboutTitle> */}
 
+        <StyledAboutTitle show={this.state.titleStyle.show}>
+          <div>
+            Leopold
+          </div>
+          <br/>
+          <div>Cumque accusantium sit cumque. Corrupti sed adipisci non molestias rerum cumque dicta minus. Debitis sed iusto debitis consequuntur nulla accusamus molestiae placeat modi. Est rem perferendis velit sint.</div>
+        </StyledAboutTitle>
+        <StyledAboutBar  show={!this.state.titleStyle.show}>
+          <div>Leopold</div>
+          <Avatar/>
+        </StyledAboutBar>
+        <StyledAboutSection id='about-section-1'>
           <IntersectionVisible
-            id='about-section-e'
-            WrappedComponent={StyledAboutTitle}
+            WrappedComponent={ObserverHook}
             onShow={this.onShow}
             onHide={this.onHide}
             onIntersect={this.onIntersect}
-            styles={this.state.titleStyle}
+            
           >
-            Leopold
+            Section 1
           </IntersectionVisible>
-        <StyledAboutSection id='about-section-1'>
-          Section 1 
-          <button onClick={this.changeTitlePosition}>Click</button>
         </StyledAboutSection>
         <StyledAboutSection id='about-section-2'>Section 2</StyledAboutSection>
         <StyledAboutSection id='about-section-3'>Section 3</StyledAboutSection>

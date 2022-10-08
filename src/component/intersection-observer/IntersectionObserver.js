@@ -31,7 +31,6 @@ export default class IntersectionVisible extends Component {
     } else if (onHide) {
       onHide(entries);
     }
-    console.log(intersectionRect)
     onIntersect(entries);
   };
 
