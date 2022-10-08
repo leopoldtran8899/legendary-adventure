@@ -10,15 +10,17 @@ export default class AboutPage extends Component {
     super(props)
     this.state = {
       titleStyle: {
-        position: 'normal'
+        show: true
       }
     }
   }
   onHide = () => {
     console.log('hide')
+    // this.changeTitlePosition()
   }
   onShow = () => {
     console.log('show')
+    // this.changeTitlePosition()
   }
   onIntersect = () => {
     console.log('intersec')
@@ -28,10 +30,10 @@ export default class AboutPage extends Component {
       ...state,
       titleStyle: {
         ...state.titleStyle,
-        position: 'move'
+        show: !state.titleStyle.show
       }
     }))
-    console.log("click")
+    console.log(this.state.titleStyle.show)
   }
   render() {
     return (
@@ -39,7 +41,7 @@ export default class AboutPage extends Component {
         {/* <StyledAboutTitle>Tien Tran (Leopold)</StyledAboutTitle> */}
 
           <IntersectionVisible
-            id='about-section-1'
+            id='about-section-e'
             WrappedComponent={StyledAboutTitle}
             onShow={this.onShow}
             onHide={this.onHide}

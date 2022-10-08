@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 export const StyledAboutContainer = styled.div`
   height: 100vh;
@@ -24,22 +24,35 @@ export const StyledAboutSection = styled.section`
   }
   
 `;
-const rotate = keyframes`
+const rotateOut = keyframes`
   from {
-    transform: rotate(0deg);
+    opacity: 1;
+		transform: translateX(0) rotate(0deg);
   }
 
   to {
-    transform: rotate(360deg);
+    opacity: 0;
+		transform: translateX(-400px) rotate(-200deg);
+    visibility: hidden;
   }
 `;
+const rotateIn = keyframes`
+from {
+    opacity: 0;
+		transform: translateX(-400px) rotate(-200deg);
+  }
+
+  to {
+    opacity: 1;
+		transform: translateX(0) rotate(0deg);
+    visibility: visible;
+  }
+`
 export const StyledAboutTitle = styled.h1`
   position: fixed;
   color: yellow;
-  border: 1px solid yellow;
   z-index: 100;
-  /* animation: ${rotate} 2s linear infinite; */
-  ${props => props.position === 'normal' ? TitleFront: TitleLeft}
+  /* ${props => props.show ? DisplayIn : MoveOut} */
   /* animation: ${props => props.position == 'normal'} */
 
   font-size: 2rem;
@@ -47,15 +60,10 @@ export const StyledAboutTitle = styled.h1`
   left: 20vw;
 `;
 
-const TitleFront = `
-  top: 30vh;
-  left: 20vw;
-  font-size: 2rem;
+const DisplayIn = css`
+  animation: ${rotateIn} 1s linear 1 normal forwards;
 `;
 
-const TitleLeft = `
-  transform: rotate(-90deg);
-  left: 1vw;
-  bottom: 10px;
-
+const MoveOut = css`
+  animation: ${rotateOut} 1s linear 1 normal forwards;
 `
