@@ -34,11 +34,12 @@ export const StyledAboutTitle = styled.h1`
   text-align: justify;
   & div:first-child {
     font-size: 2rem;
-    color: yellow;
+    color: #9FC131;
   }
 `;
 
 export const StyledAboutBar = styled.div`
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -46,7 +47,7 @@ export const StyledAboutBar = styled.div`
   width: 5vw;
   min-width: 20px;
   z-index: 100;
-  background-color: gold;
+  background-color: #9FC131;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,6 +55,7 @@ export const StyledAboutBar = styled.div`
   & div:first-child {
     transform: translateY(-40px) rotate(-90deg);
     font-size: 1.2rem;
+    color: #042940;
   }
   ${props => props.show ? ZoomInAnimation : ZoomOutAnimation};
 `
@@ -67,7 +69,7 @@ export const ObserverHook = styled.div`
 export const Avatar = styled.div`
   width: 4rem;
   height: 4rem;
-  border: 1px solid black;
+  border: 3px solid #042940;
   border-radius: 100px;
   margin-bottom: 2rem;
 `
