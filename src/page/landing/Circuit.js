@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { StyledCircuit } from './LandingPageStyled'
 export const CircuitSVG = () => {
@@ -68,7 +69,7 @@ export const CircuitSVG = () => {
           className='circuit-group-1'
         >
           <tspan textLength='139.234' x='77.4769' y='30'>
-            Frontend
+            <Link to='frontend'>Frontend</Link>
           </tspan>
         </text>
         <text

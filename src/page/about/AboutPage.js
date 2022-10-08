@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import  IntersectionVisible  from '../../component/intersection-observer/IntersectionObserver'
+import { FrontendData } from '../../data/FrontendData'
 import { StyledAboutContainer, StyledAboutSection, StyledAboutTitle, ObserverHook, StyledAboutBar, Avatar } from './AboutPageStyled'
 
 // const StyledAboutSectionWithObserver = withIntersectionObserver(StyledAboutSection)
@@ -43,14 +44,14 @@ export default class AboutPage extends Component {
         {/* <StyledAboutTitle>Tien Tran (Leopold)</StyledAboutTitle> */}
 
         <StyledAboutTitle show={this.state.titleStyle.show}>
-          <div>
-            Leopold
-          </div>
+          <div>{FrontendData.topLine}</div>
           <br/>
-          <div>Cumque accusantium sit cumque. Corrupti sed adipisci non molestias rerum cumque dicta minus. Debitis sed iusto debitis consequuntur nulla accusamus molestiae placeat modi. Est rem perferendis velit sint.</div>
+          <div>{FrontendData.title}</div>
+          <br/>
+          <div>{FrontendData.subTitle}</div>
         </StyledAboutTitle>
         <StyledAboutBar  show={!this.state.titleStyle.show}>
-          <div>Leopold</div>
+          <div>{FrontendData.sideTitle}</div>
           <Avatar/>
         </StyledAboutBar>
         <StyledAboutSection id='about-section-1'>
@@ -65,7 +66,6 @@ export default class AboutPage extends Component {
           </IntersectionVisible>
         </StyledAboutSection>
         <StyledAboutSection id='about-section-2'>Section 2</StyledAboutSection>
-        <StyledAboutSection id='about-section-3'>Section 3</StyledAboutSection>
       </StyledAboutContainer>
     );
   }

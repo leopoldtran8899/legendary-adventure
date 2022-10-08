@@ -9,7 +9,7 @@ function App() {
     <Routes>
       <Route path='/' element={<AppLayout />}>
         <Route index element={<LandingPage />} />
-        <Route path="about" element={<AboutPage />} />
+        <Route path="frontend" element={<AboutPage />} />
 
         <Route path='*' element={<ErrorPage />} />
       </Route>

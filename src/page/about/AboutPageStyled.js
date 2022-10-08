@@ -33,8 +33,15 @@ export const StyledAboutTitle = styled.h1`
   font-size: 1rem;
   text-align: justify;
   & div:first-child {
+    font-size: 1.2rem;
+  }
+  & div:nth-child(3) {
     font-size: 2rem;
-    color: #9FC131;
+    color: #042940;
+    background-color: #9FC131;
+    box-shadow: 12px 12px 0px 0px #005C53;
+    width: fit-content;
+    padding: 1rem;
   }
 `;
 
@@ -52,9 +59,15 @@ export const StyledAboutBar = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  box-shadow: 12px 12px 0px 0px #005C53;
   & div:first-child {
     transform: translateY(-40px) rotate(-90deg);
     font-size: 1.2rem;
+    color: #042940;
+  }
+  & div:nth-child(1) {
+    transform: translateY(-40px) rotate(-90deg);
+    font-size: 1.5rem;
     color: #042940;
   }
   ${props => props.show ? ZoomInAnimation : ZoomOutAnimation};
