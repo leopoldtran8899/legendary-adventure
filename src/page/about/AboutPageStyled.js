@@ -12,10 +12,8 @@ export const StyledAboutContainer = styled.div`
   }
 `;
 export const StyledAboutSection = styled.section`
-  color: white;
   position: relative;
   scroll-snap-align: center;
-  display: flex;
   min-height: 100vh;
   @media (min-height: 30em) {
     height: 100vh;
@@ -24,6 +22,7 @@ export const StyledAboutSection = styled.section`
 `;
 
 export const StyledAboutTitle = styled.h1`
+  font-family: 'Silkscreen', cursive;
   position: fixed;
   z-index: 100;
   ${props => (props.show ? RotateInAnimation : RotateOutAnimation)}
@@ -32,46 +31,97 @@ export const StyledAboutTitle = styled.h1`
   max-width: 30vw;
   font-size: 1rem;
   text-align: justify;
-  & div:first-child {
-    font-size: 1.2rem;
-  }
-  & div:nth-child(3) {
-    font-size: 2rem;
+  & .about-title-main {
     color: #042940;
-    background-color: #9FC131;
-    box-shadow: 12px 12px 0px 0px #005C53;
+    background-color: #9fc131;
+    box-shadow: 12px 12px 0px 0px #005c53;
     width: fit-content;
     padding: 1rem;
+  }
+  & .about-title-link {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+    & .about-title-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  @media (min-width: 400px) {
+    & .about-title-top {
+      font-size: 1.2rem;
+    }
+    & .about-title-main {
+      font-size: 2rem;
+    }
+    & .about-title-link .about-title-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 `;
 
 export const StyledAboutBar = styled.div`
+  font-family: 'Silkscreen', cursive;
+  @media (min-width: 400px) {
+    display: flex;
+  }
   visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
   min-height: 100vh;
   width: 5vw;
-  min-width: 20px;
+  min-width: 4rem;
   z-index: 100;
-  background-color: #9FC131;
-  display: flex;
+  background-color: #9fc131;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  box-shadow: 12px 12px 0px 0px #005C53;
-  & div:first-child {
-    transform: translateY(-40px) rotate(-90deg);
-    font-size: 1.2rem;
-    color: #042940;
-  }
-  & div:nth-child(1) {
+  box-shadow: 12px 12px 0px 0px #005c53;
+  & .about-bar-title {
     transform: translateY(-40px) rotate(-90deg);
     font-size: 1.5rem;
     color: #042940;
   }
-  ${props => props.show ? ZoomInAnimation : ZoomOutAnimation};
-`
+  & .about-bar-logo {
+    margin: 1rem auto;
+    width: 100%;
+  }
+  ${props => (props.show ? ZoomInAnimation : ZoomOutAnimation)};
+`;
+export const StyledSkillBox = styled.div`
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 20%;
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: flex-start;
+  gap: 2vw 1vh;
+  & .about-skill-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  @media (min-width: 350px) {
+    right: 20vw;
+    
+    & .about-skill-icon {
+      width: 3rem;
+      height: 3rem;
+    }
+    & .about-skill-text{
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 500px) and (min-height: 700px) {
+    bottom: 20vh;
+  }
+`;
 
 
 export const ObserverHook = styled.div`
@@ -79,14 +129,6 @@ export const ObserverHook = styled.div`
   margin: 10px auto;
   visibility: hidden;
 `
-export const Avatar = styled.div`
-  width: 4rem;
-  height: 4rem;
-  border: 3px solid #042940;
-  border-radius: 100px;
-  margin-bottom: 2rem;
-`
-
 // Keyframs
 const rotateOut = keyframes`
   from {
