@@ -1,10 +1,14 @@
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { Routes, Route, Outlet } from "react-router-dom";
 import './App.css';
 import Layout from './component/layout/Layout'
 import LandingPage from './page/landing/LandingPage'
 import ErrorPage from './page/error/ErrorPage'
 import AboutPage from "./page/about/AboutPage";
 function App() {
+  useEffect(() => {
+    document.title = 'Leopold Tran\'s page';
+  });
   return (
     <Routes>
       <Route path='/' element={<AppLayout />}>
@@ -17,11 +21,11 @@ function App() {
   );
 }
 const AppLayout = () => {
-  return(
+  return (
     <Layout>
-      <Outlet/>
+      <Outlet />
     </Layout>
-  )
+  );
 }
 
 export default App;
