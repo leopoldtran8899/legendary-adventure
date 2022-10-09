@@ -6,6 +6,7 @@ import { FrontendData } from '../../data/FrontendData'
 import { StyledAboutContainer, StyledAboutSection, StyledAboutTitle, ObserverHook, StyledAboutBar, StyledSkillBox, AboutArrowBox, AboutArrow } from './AboutPageStyled'
 import { SiRobotframework, SiJavascript, SiReact, SiCss3, SiHtml5, SiLinkedin, SiGithub } from 'react-icons/si';
 import { HiOutlineArrowDown } from 'react-icons/hi'
+import Inprogress from '../../component/inprogress/Inprogress'
 // const StyledAboutSectionWithObserver = withIntersectionObserver(StyledAboutSection)
 
 export default class AboutPage extends Component {
@@ -65,6 +66,10 @@ export default class AboutPage extends Component {
           </div>
         </StyledAboutTitle>
         <StyledAboutBar show={!this.state.titleStyle.show}>
+          <div className='about-bar-link'>
+            <SiLinkedin size={'3rem'} color={'#042940'} className='bar-icon'/>
+            <SiGithub size={'3rem'} color={'#042940'} className='bar-icon'/>
+          </div>
           <div className='about-bar-title'>{FrontendData.sideTitle}</div>
           <div className='about-bar-logo'>
             <CircleIcon
@@ -110,7 +115,9 @@ export default class AboutPage extends Component {
             section 1
           </IntersectionVisible>
         </StyledAboutSection>
-        <StyledAboutSection id='about-section-2'>Section 2</StyledAboutSection>
+        <StyledAboutSection id='about-section-2'>
+          <Inprogress width='100%' height='100%'/>
+        </StyledAboutSection>
       </StyledAboutContainer>
     );
   }

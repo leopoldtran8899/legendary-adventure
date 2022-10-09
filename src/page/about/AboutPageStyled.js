@@ -30,7 +30,6 @@ export const StyledAboutTitle = styled.h1`
   left: 20vw;
   max-width: 30vw;
   font-size: 1rem;
-  text-align: justify;
   & .about-title-main {
     color: #042940;
     background-color: #9fc131;
@@ -99,6 +98,24 @@ export const StyledAboutBar = styled.div`
   & .about-bar-logo {
     margin: 1rem auto;
     width: 100%;
+  }
+  & .about-bar-link {
+    margin-top: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 2;
+    gap: 1rem;
+    & .bar-icon{
+      &:last-child {
+        border-radius: 100%;
+      }
+      &:hover {
+        cursor: pointer;
+        box-shadow: 3px 3px 0px 0px #005c53;
+      }
+    }
   }
   ${props => (props.show ? ZoomInAnimation : ZoomOutAnimation)};
   @media (min-width: 400px) {
