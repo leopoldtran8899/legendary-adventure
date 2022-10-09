@@ -41,12 +41,20 @@ export const StyledAboutTitle = styled.h1`
   & .about-title-link {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 1rem;
     margin-top: 1rem;
     & .about-title-icon {
       width: 1.5rem;
       height: 1.5rem;
+
+      &:hover {
+        box-shadow: 3px 3px 0px 0px #005c53;
+        cursor: pointer;
+      }
+    }
+    & .round {
+      border-radius: 100%;
     }
   }
   @media (min-width: 400px) {
@@ -56,18 +64,19 @@ export const StyledAboutTitle = styled.h1`
     & .about-title-main {
       font-size: 2rem;
     }
-    & .about-title-link .about-title-icon {
-      width: 2.5rem;
-      height: 2.5rem;
+    & .about-title-link {
+      justify-content: flex-end;
+      & .about-title-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
     }
   }
 `;
 
 export const StyledAboutBar = styled.div`
   font-family: 'Silkscreen', cursive;
-  @media (min-width: 400px) {
-    display: flex;
-  }
+  font-weight: 600;
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -92,6 +101,9 @@ export const StyledAboutBar = styled.div`
     width: 100%;
   }
   ${props => (props.show ? ZoomInAnimation : ZoomOutAnimation)};
+  @media (min-width: 400px) {
+    display: flex;
+  }
 `;
 export const StyledSkillBox = styled.div`
   position: absolute;
@@ -107,7 +119,7 @@ export const StyledSkillBox = styled.div`
     height: 2rem;
   }
   
-  @media (min-width: 350px) {
+  @media (min-width: 376px) {
     right: 20vw;
     
     & .about-skill-icon {
@@ -122,7 +134,66 @@ export const StyledSkillBox = styled.div`
     bottom: 20vh;
   }
 `;
+const bounceTop = keyframes`
+  0% {
+    transform: translateY(-45px);
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-24px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translateY(-12px);
+    animation-timing-function: ease-in;
+  }
+  82% {
+    transform: translateY(-6px);
+    animation-timing-function: ease-in;
+  }
+  93% {
+    transform: translateY(-4px);
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+`
+export const AboutArrowBox = styled.div`
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35vw; /* Need a specific value to work */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: baseline;
+  font-size: 0.8rem;
+  @media (min-width: 500px) and (min-height: 700px) {
+    gap: 0rem 1rem;
+    font-size: 1.2rem;
+  }
+  animation: ${bounceTop} 1.5s linear 4s infinite both;
+`;
 
+export const AboutArrow = styled.div`
+`
 
 export const ObserverHook = styled.div`
   position: relative;
@@ -178,6 +249,8 @@ const zoomOut = keyframes`
     visibility: hidden;
 	}
 `
+
+
 // Animation
 const RotateInAnimation = css`
   animation: ${rotateIn} 0.8s linear 1 normal forwards;

@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 import CircleIcon from '../../component/circle-icon/CircleIcon'
 import  IntersectionVisible  from '../../component/intersection-observer/IntersectionObserver'
 import { FrontendData } from '../../data/FrontendData'
-import { StyledAboutContainer, StyledAboutSection, StyledAboutTitle, ObserverHook, StyledAboutBar, StyledSkillBox } from './AboutPageStyled'
+import { StyledAboutContainer, StyledAboutSection, StyledAboutTitle, ObserverHook, StyledAboutBar, StyledSkillBox, AboutArrowBox, AboutArrow } from './AboutPageStyled'
 import { SiRobotframework, SiJavascript, SiReact, SiCss3, SiHtml5, SiLinkedin, SiGithub } from 'react-icons/si';
-
+import { HiOutlineArrowDown } from 'react-icons/hi'
 // const StyledAboutSectionWithObserver = withIntersectionObserver(StyledAboutSection)
 
 export default class AboutPage extends Component {
@@ -53,9 +53,13 @@ export default class AboutPage extends Component {
           <div className='about-title-sub'>{FrontendData.subTitle}</div>
           <div className='about-title-link'>
             <div className='about-title-icon'>
-              <SiLinkedin size={'100%'} color={'#9fc131'} />
+              <SiLinkedin
+                size={'100%'}
+                color={'#9fc131'}
+                className='title-icon'
+              />
             </div>
-            <div className='about-title-icon'>
+            <div className='about-title-icon round'>
               <SiGithub size={'100%'} color={'#9fc131'} />
             </div>
           </div>
@@ -88,6 +92,15 @@ export default class AboutPage extends Component {
               <SiHtml5 size={'100%'} color={'#9fc131'} />
             </div>
           </StyledSkillBox>
+          <AboutArrowBox>
+            <AboutArrow>
+              <HiOutlineArrowDown />
+            </AboutArrow>
+            {FrontendData.scrollDownText}
+            <AboutArrow>
+              <HiOutlineArrowDown />
+            </AboutArrow>
+          </AboutArrowBox>
           <IntersectionVisible
             WrappedComponent={ObserverHook}
             onShow={this.onShow}
