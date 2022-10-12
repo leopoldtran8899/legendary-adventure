@@ -93,7 +93,7 @@ export const StyledAboutBar = styled.div`
   justify-content: flex-end;
   box-shadow: 12px 12px 0px 0px #005c53;
   & .about-bar-title {
-    transform: translateY(-40px) rotate(-90deg);
+    transform: translateY(-45px) rotate(-90deg);
     font-size: 1.5rem;
     color: #042940;
   }

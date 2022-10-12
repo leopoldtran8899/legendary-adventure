@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledProjectListContainer = styled.div`
   max-height: 80vh;
-
+  overflow-y: scroll;
 `;
 export const StyledProjectListTitle = styled.div`
   position: sticky;

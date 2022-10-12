@@ -4,9 +4,8 @@ import CircleIcon from '../../component/circle-icon/CircleIcon'
 import  IntersectionVisible  from '../../component/intersection-observer/IntersectionObserver'
 import { FrontendData } from '../../data/FrontendData'
 import { StyledAboutContainer, StyledAboutSection, StyledAboutTitle, ObserverHook, StyledAboutBar, StyledSkillBox, AboutArrowBox, AboutArrow } from './AboutPageStyled'
-import { SiRobotframework, SiJavascript, SiReact, SiCss3, SiHtml5, SiStyledcomponents, SiLinkedin, SiGithub } from 'react-icons/si';
+import { SiRobotframework, SiJavascript, SiReact, SiCss3, SiHtml5, SiLinkedin, SiGithub } from 'react-icons/si';
 import { HiOutlineArrowDown } from 'react-icons/hi'
-import Inprogress from '../../component/inprogress/Inprogress'
 import ProjectList from '../../component/project-list/ProjectList'
 import { ProjectList as ProjectData } from '../../data/FrontendData'
 import StyledLink from '../../component/StyledLink'
