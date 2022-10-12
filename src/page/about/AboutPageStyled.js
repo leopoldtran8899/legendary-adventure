@@ -46,17 +46,12 @@ export const StyledAboutTitle = styled.h1`
     & .about-title-icon {
       width: 1.5rem;
       height: 1.5rem;
-
-      &:hover {
-        box-shadow: 3px 3px 0px 0px #005c53;
-        cursor: pointer;
-      }
     }
     & .round {
       border-radius: 100%;
     }
   }
-  @media (min-width: 400px) {
+  @media (min-width: 512px) {
     & .about-title-top {
       font-size: 1.2rem;
     }
@@ -130,13 +125,19 @@ export const StyledSkillBox = styled.div`
   display: flex;
   flex-flow: row-reverse wrap;
   justify-content: flex-start;
-  gap: 2vw 1vh;
+  gap: 2vh 1.5vw;
   & .about-skill-icon {
     width: 2rem;
     height: 2rem;
+    &:nth-child(2) {
+      border-radius: 100%;
+    }
+    &:hover {
+          box-shadow: 3px 3px 0px 0px #005c53;
+          cursor: pointer;
+        }
   }
-  
-  @media (min-width: 376px) {
+  @media (min-width: 512px) {
     right: 20vw;
     
     & .about-skill-icon {
@@ -202,7 +203,7 @@ export const AboutArrowBox = styled.div`
   justify-content: center;
   align-items: baseline;
   font-size: 0.8rem;
-  @media (min-width: 500px) and (min-height: 700px) {
+  @media (min-width: 512px) and (min-height: 700px) {
     gap: 0rem 1rem;
     font-size: 1.2rem;
   }

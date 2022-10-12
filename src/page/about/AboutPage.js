@@ -4,7 +4,7 @@ import CircleIcon from '../../component/circle-icon/CircleIcon'
 import  IntersectionVisible  from '../../component/intersection-observer/IntersectionObserver'
 import { FrontendData } from '../../data/FrontendData'
 import { StyledAboutContainer, StyledAboutSection, StyledAboutTitle, ObserverHook, StyledAboutBar, StyledSkillBox, AboutArrowBox, AboutArrow } from './AboutPageStyled'
-import { SiRobotframework, SiJavascript, SiReact, SiCss3, SiHtml5, SiLinkedin, SiGithub } from 'react-icons/si';
+import { SiRobotframework, SiJavascript, SiReact, SiCss3, SiHtml5, SiStyledcomponents, SiLinkedin, SiGithub } from 'react-icons/si';
 import { HiOutlineArrowDown } from 'react-icons/hi'
 import Inprogress from '../../component/inprogress/Inprogress'
 // const StyledAboutSectionWithObserver = withIntersectionObserver(StyledAboutSection)
@@ -54,21 +54,26 @@ export default class AboutPage extends Component {
           <div className='about-title-sub'>{FrontendData.subTitle}</div>
           <div className='about-title-link'>
             <div className='about-title-icon'>
-              <SiLinkedin
-                size={'100%'}
-                color={'#9fc131'}
-                className='title-icon'
-              />
+              <SiJavascript size={'100%'} color={'#9fc131'} />
             </div>
             <div className='about-title-icon round'>
-              <SiGithub size={'100%'} color={'#9fc131'} />
+              <SiReact size={'100%'} color={'#9fc131'} />
+            </div>
+            <div className='about-title-icon round'>
+              <SiCss3 size={'100%'} color={'#9fc131'} />
+            </div>
+            <div className='about-title-icon round'>
+              <SiHtml5 size={'100%'} color={'#9fc131'} />
+            </div>
+            <div className='about-title-icon round'>
+              <SiStyledcomponents size={'100%'} color={'#9fc131'} />
             </div>
           </div>
         </StyledAboutTitle>
         <StyledAboutBar show={!this.state.titleStyle.show}>
           <div className='about-bar-link'>
-            <SiLinkedin size={'3rem'} color={'#042940'} className='bar-icon'/>
-            <SiGithub size={'3rem'} color={'#042940'} className='bar-icon'/>
+            <SiLinkedin size={'3rem'} color={'#042940'} className='bar-icon' />
+            <SiGithub size={'3rem'} color={'#042940'} className='bar-icon' />
           </div>
           <div className='about-bar-title'>{FrontendData.sideTitle}</div>
           <div className='about-bar-logo'>
@@ -85,16 +90,10 @@ export default class AboutPage extends Component {
         <StyledAboutSection id='about-section-1'>
           <StyledSkillBox>
             <div className='about-skill-icon'>
-              <SiJavascript size={'100%'} color={'#9fc131'} />
+              <SiLinkedin size={'100%'} color={'#9fc131'} />
             </div>
             <div className='about-skill-icon'>
-              <SiReact size={'100%'} color={'#9fc131'} />
-            </div>
-            <div className='about-skill-icon'>
-              <SiCss3 size={'100%'} color={'#9fc131'} />
-            </div>
-            <div className='about-skill-icon'>
-              <SiHtml5 size={'100%'} color={'#9fc131'} />
+              <SiGithub size={'100%'} color={'#9fc131'} />
             </div>
           </StyledSkillBox>
           <AboutArrowBox>
@@ -116,7 +115,7 @@ export default class AboutPage extends Component {
           </IntersectionVisible>
         </StyledAboutSection>
         <StyledAboutSection id='about-section-2'>
-          <Inprogress width='100%' height='100%'/>
+          <Inprogress width='100%' height='100%' />
         </StyledAboutSection>
       </StyledAboutContainer>
     );
