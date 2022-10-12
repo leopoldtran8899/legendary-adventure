@@ -7,6 +7,9 @@ import { StyledAboutContainer, StyledAboutSection, StyledAboutTitle, ObserverHoo
 import { SiRobotframework, SiJavascript, SiReact, SiCss3, SiHtml5, SiStyledcomponents, SiLinkedin, SiGithub } from 'react-icons/si';
 import { HiOutlineArrowDown } from 'react-icons/hi'
 import Inprogress from '../../component/inprogress/Inprogress'
+import ProjectList from '../../component/project-list/ProjectList'
+import { ProjectList as ProjectData } from '../../data/FrontendData'
+import StyledLink from '../../component/StyledLink'
 // const StyledAboutSectionWithObserver = withIntersectionObserver(StyledAboutSection)
 
 export default class AboutPage extends Component {
@@ -19,7 +22,6 @@ export default class AboutPage extends Component {
     }
   }
   onHide = () => {
-    console.log('hide')
     this.setState(state => ({
       ...state,
       titleStyle: {
@@ -29,7 +31,6 @@ export default class AboutPage extends Component {
     }))
   }
   onShow = () => {
-    console.log('show')
     this.setState(state => ({
       ...state,
       titleStyle: {
@@ -39,7 +40,6 @@ export default class AboutPage extends Component {
     }))
   }
   onIntersect = () => {
-    console.log('intersec')
   }
   render() {
     return (
@@ -65,15 +65,20 @@ export default class AboutPage extends Component {
             <div className='about-title-icon round'>
               <SiHtml5 size={'100%'} color={'#9fc131'} />
             </div>
-            <div className='about-title-icon round'>
-              <SiStyledcomponents size={'100%'} color={'#9fc131'} />
-            </div>
           </div>
         </StyledAboutTitle>
         <StyledAboutBar show={!this.state.titleStyle.show}>
           <div className='about-bar-link'>
-            <SiLinkedin size={'3rem'} color={'#042940'} className='bar-icon' />
-            <SiGithub size={'3rem'} color={'#042940'} className='bar-icon' />
+            <StyledLink href={FrontendData.linkedin}>
+              <SiLinkedin
+                size={'3rem'}
+                color={'#042940'}
+                className='bar-icon'
+              />
+            </StyledLink>
+            <StyledLink href={FrontendData.github}>
+              <SiGithub size={'3rem'} color={'#042940'} className='bar-icon' />
+            </StyledLink>
           </div>
           <div className='about-bar-title'>{FrontendData.sideTitle}</div>
           <div className='about-bar-logo'>
@@ -90,10 +95,14 @@ export default class AboutPage extends Component {
         <StyledAboutSection id='about-section-1'>
           <StyledSkillBox>
             <div className='about-skill-icon'>
-              <SiLinkedin size={'100%'} color={'#9fc131'} />
+              <StyledLink href={FrontendData.linkedin}>
+                <SiLinkedin size={'100%'} color={'#9fc131'} />
+              </StyledLink>
             </div>
             <div className='about-skill-icon'>
-              <SiGithub size={'100%'} color={'#9fc131'} />
+              <StyledLink href={FrontendData.github}>
+                <SiGithub size={'100%'} color={'#9fc131'} />
+              </StyledLink>
             </div>
           </StyledSkillBox>
           <AboutArrowBox>
@@ -115,7 +124,8 @@ export default class AboutPage extends Component {
           </IntersectionVisible>
         </StyledAboutSection>
         <StyledAboutSection id='about-section-2'>
-          <Inprogress width='100%' height='100%' />
+          {/* <Inprogress width='100%' height='100%' /> */}
+          <ProjectList projects={ProjectData} />
         </StyledAboutSection>
       </StyledAboutContainer>
     );

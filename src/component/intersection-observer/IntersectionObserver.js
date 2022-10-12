@@ -25,7 +25,6 @@ export default class IntersectionVisible extends Component {
       bottom,
       right
     } = intersectionRect;
-    console.log(entries)
     if ([ top, bottom, left, right].some(e => e > 0) && onShow) {
       onShow(entries);
     } else if (onHide) {

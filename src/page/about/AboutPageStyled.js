@@ -15,10 +15,17 @@ export const StyledAboutSection = styled.section`
   position: relative;
   scroll-snap-align: center;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 2rem;
   @media (min-height: 30em) {
     height: 100vh;
   }
-  
+  @media (min-width: 400px) {
+    padding: 0rem 5.2rem;
+  }
 `;
 
 export const StyledAboutTitle = styled.h1`
@@ -278,9 +285,9 @@ const RotateOutAnimation = css`
   animation: ${rotateOut} 0.8s linear 1 normal forwards;
 `
 const ZoomInAnimation = css`
-  animation: ${zoomIn} 0.8s linear 1 normal forwards;
+  animation: ${zoomIn} 0.8s linear 0.5s normal forwards;
 `;
 
 const ZoomOutAnimation = css`
-  animation: ${zoomOut} 0.8s linear 1 normal forwards;
+  animation: ${zoomOut} 0.8s linear 0.5s normal forwards;
 `
