@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-
+import { StyledErrorPage } from './ErrorPageStyled'
 export default class ErrorPage extends Component {
 
   render() {
     return (
-      <div>ErrorPage</div>
+      <StyledErrorPage>
+        Page not found.
+      </StyledErrorPage>
     )
   }
 }
