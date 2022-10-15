@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import { SiGithub, SiReact, SiJavascript, SiStyledcomponents } from 'react-icons/si'
+import { SiGithub, SiReact, SiJavascript, SiStyledcomponents, SiNextdotjs, SiTailwindcss } from 'react-icons/si'
 import { StyledProjectItem } from './ProjectItemStyled'
 import { RiExternalLinkLine } from 'react-icons/ri'
 import StyledLink from '../StyledLink'
@@ -8,10 +8,14 @@ export class ProjectItem extends Component {
   getTechIcon = (tech) => {
     switch(tech) {
       case 'react':
-        return <SiReact size='100%'/>
-        case 'styled-component':
-          return <SiStyledcomponents size='100%'/>
-          default:
+        return <SiReact size='100%' />;
+      case 'styled-component':
+        return <SiStyledcomponents size='100%'/>
+      case 'next':
+        return <SiNextdotjs size='100%' />;
+      case 'tailwind':
+        return <SiTailwindcss size='100%' />;  
+      default:
         return <SiJavascript size='100%'/>
     }
   }

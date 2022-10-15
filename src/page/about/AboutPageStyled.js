@@ -24,7 +24,7 @@ export const StyledAboutSection = styled.section`
     height: 100vh;
   }
   @media (min-width: 400px) {
-    padding: 0rem 5.2rem;
+    padding: 0 6rem;
   }
 `;
 
@@ -85,6 +85,7 @@ export const StyledAboutBar = styled.div`
   min-height: 100vh;
   width: 5vw;
   min-width: 4rem;
+  max-width: 5rem;
   z-index: 100;
   background-color: #9fc131;
   display: none;

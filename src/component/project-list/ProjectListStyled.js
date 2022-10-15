@@ -2,7 +2,13 @@ import styled from "styled-components";
 
 export const StyledProjectListContainer = styled.div`
   max-height: 80vh;
-  overflow-y: scroll;
+  min-height: 40vh;
+  /* overflow-y: auto; */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 `;
 export const StyledProjectListTitle = styled.div`
   position: sticky;

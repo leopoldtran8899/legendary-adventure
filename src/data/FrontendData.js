@@ -1,6 +1,6 @@
 export const FrontendData = {
   topLine: 'Hi, I am ',
-  title: '<Leopold />',
+  title: '<Leo />',
   subTitle: ' - a front-end developer;',
   sideTitle: 'Leopold',
   scrollDownText: 'View my projects',
@@ -11,26 +11,12 @@ export const FrontendData = {
 export const ProjectList = [
   {
     id: 1,
-    title: 'Weather component',
-    tech: ['react', 'styled-componnet'],
-    desc: 'Enim atque ab dolore rerum mollitia veniam recusandae porro. Dolorum ipsum similique. Rerum repellat illum voluptate provident est. Nostrum quisquam sit.',
-    github: 'https://github.com',
-    demo: null
+    title: 'Pokémon Gallery',
+    tech: ['react', 'tailwind', 'next'],
+    desc: 'WIP project. A responsive web page that users can browser all the Pokémons. This project is built using PokéAPI (https://pokeapi.co/). I build this project as a way to learn NextJS and TailwindCSS.',
+    github: 'https://github.com/leopoldtran8899/pokemon-gallery',
+    demo: 'https://leopoldtran8899.github.io/pokemon-gallery'
   },
-  {
-    id: 2,
-    title: 'Weather component 2',
-    tech: ['react', 'styled-componnet'],
-    desc: 'Enim atque ab dolore rerum mollitia veniam recusandae porro. Dolorum ipsum similique. Rerum repellat illum voluptate provident est. Nostrum quisquam sit.',
-    github: 'https://github.com',
-    demo: null
-  },
-  {
-    id: 3,
-    title: 'Weather component 3',
-    tech: ['react', 'styled-componnet'],
-    desc: 'Enim atque ab dolore rerum mollitia veniam recusandae porro. Dolorum ipsum similique. Rerum repellat illum voluptate provident est. Nostrum quisquam sit.',
-    github: 'https://github.com',
-    demo: null
-  },
+  
+
 ]
