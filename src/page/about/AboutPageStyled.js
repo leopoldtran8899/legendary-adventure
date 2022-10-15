@@ -1,10 +1,26 @@
 import styled, { keyframes, css } from "styled-components";
-
+import bg from '../../images/circuit-svgrepo-com.svg'
 export const StyledAboutContainer = styled.div`
   height: 100vh;
   scroll-behavior: smooth;
   overflow-y: scroll;
   width: 100%;
+  &::before {
+    content: '';
+    background-image: url(${bg});
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.2;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media (min-width: 400px) {
+      background-size: auto;
+    }
+  }
   @media (min-height: 30em) {
     scroll-snap-type: y mandatory;
     /* height: 100vh;

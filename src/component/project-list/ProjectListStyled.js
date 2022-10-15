@@ -19,7 +19,6 @@ export const StyledProjectListTitle = styled.div`
   padding-bottom: 1rem;
   border-bottom: 0.4rem solid #9FC131;
   margin-bottom: 1rem;
-  background-color: #042940;
   @media (min-width: 500px) and (min-height: 700px) {
     font-size: 2rem;
   }

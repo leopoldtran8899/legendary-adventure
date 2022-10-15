@@ -1,6 +1,6 @@
 export const FrontendData = {
   topLine: 'Hi, I am ',
-  title: '<Leo />',
+  title: '<Leopold />',
   subTitle: ' - a front-end developer;',
   sideTitle: 'Leopold',
   scrollDownText: 'View my projects',
