@@ -1,27 +1,46 @@
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import { SiGithub, SiReact, SiJavascript, SiStyledcomponents, SiNextdotjs, SiTailwindcss } from 'react-icons/si'
-import { StyledProjectItem } from './ProjectItemStyled'
-import { RiExternalLinkLine } from 'react-icons/ri'
-import StyledLink from '../StyledLink'
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import {
+  SiGithub,
+  SiReact,
+  SiJavascript,
+  SiStyledcomponents,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiPhp,
+  SiLaravel,
+  SiVuedotjs,
+  SiQuasar,
+} from 'react-icons/si';
+import { StyledProjectItem } from './ProjectItemStyled';
+import { RiExternalLinkLine } from 'react-icons/ri';
+import StyledLink from '../StyledLink';
 export class ProjectItem extends Component {
-  getTechIcon = (tech) => {
-    switch(tech) {
+  getTechIcon = tech => {
+    switch (tech) {
       case 'react':
         return <SiReact size='100%' />;
       case 'styled-component':
-        return <SiStyledcomponents size='100%'/>
+        return <SiStyledcomponents size='100%' />;
       case 'next':
         return <SiNextdotjs size='100%' />;
       case 'tailwind':
-        return <SiTailwindcss size='100%' />;  
+        return <SiTailwindcss size='100%' />;
+      case 'php':
+        return <SiPhp size='100%' />;
+      case 'laravel':
+        return <SiLaravel size='100%' />;
+      case 'vue':
+        return <SiVuedotjs size='100%' />;
+      case 'quasar':
+        return <SiQuasar size='100%' />;
       default:
-        return <SiJavascript size='100%'/>
+        return <SiJavascript size='100%' />;
     }
-  }
+  };
 
   render() {
-    const project = this.props.project
+    const project = this.props.project;
     return (
       <StyledProjectItem>
         <div className='project-item-title'>
@@ -44,7 +63,7 @@ export class ProjectItem extends Component {
           {project.demo ? (
             <div className='project-item-demo tech-icon'>
               <StyledLink href={project.demo}>
-              <RiExternalLinkLine size={'100%'} />
+                <RiExternalLinkLine size={'100%'} />
               </StyledLink>
             </div>
           ) : null}
@@ -59,8 +78,8 @@ ProjectItem.propTypes = {
     demo: PropTypes.string,
     desc: PropTypes.string,
     tech: PropTypes.arrayOf(PropTypes.string),
-    title: PropTypes.string
-  })
-}
+    title: PropTypes.string,
+  }),
+};
 
-export default ProjectItem
+export default ProjectItem;

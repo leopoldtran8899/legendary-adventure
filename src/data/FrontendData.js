@@ -9,6 +9,14 @@ export const FrontendData = {
   github: 'https://github.com/leopoldtran8899',
 };
 export const ProjectList = [
+  
+  {
+    id: 0,
+    title: 'Contact List (Frontend - Vue)',
+    tech: ['vue', 'quasar'],
+    desc: 'A web application using Quasar for managing contact information for organisations that containing multiple smaller companies.',
+    github: 'https://github.com/leopoldtran8899/quasar-contact-list',
+  },
   {
     id: 1,
     title: 'Pokémon Gallery',
@@ -19,6 +27,13 @@ export const ProjectList = [
   },
   {
     id: 2,
+    title: 'Contact List (Backend Laravel)',
+    tech: ['php', 'laravel'],
+    desc: 'This is the backend server for Contact List App. This server uses Laravel framework. It can be run within Homestead',
+    github: 'https://github.com/leopoldtran8899/laravel-contact-list-backend',
+  },
+  {
+    id: 3,
     title: 'Dashboard',
     tech: ['react', 'tailwind', 'next'],
     desc: 'WIP project. A responsive web page with multiple simple utilities',

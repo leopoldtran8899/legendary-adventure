@@ -4,7 +4,7 @@ import CircleIcon from '../../component/circle-icon/CircleIcon'
 import  IntersectionVisible  from '../../component/intersection-observer/IntersectionObserver'
 import { FrontendData } from '../../data/FrontendData'
 import { StyledAboutContainer, StyledAboutSection, StyledAboutTitle, ObserverHook, StyledAboutBar, StyledSkillBox, AboutArrowBox, AboutArrow } from './AboutPageStyled'
-import { SiRobotframework, SiJavascript, SiReact, SiCss3, SiHtml5, SiLinkedin, SiGithub } from 'react-icons/si';
+import { SiRobotframework, SiJavascript, SiReact, SiCss3, SiHtml5, SiLinkedin, SiGithub, SiVuedotjs } from 'react-icons/si';
 import { HiOutlineArrowDown } from 'react-icons/hi'
 import ProjectList from '../../component/project-list/ProjectList'
 import { ProjectList as ProjectData } from '../../data/FrontendData'
@@ -57,6 +57,9 @@ export default class AboutPage extends Component {
             </div>
             <div className='about-title-icon round'>
               <SiReact size={'100%'} color={'#9fc131'} />
+            </div>
+            <div className='about-title-icon round'>
+              <SiVuedotjs size={'100%'} color={'#9fc131'} />
             </div>
             <div className='about-title-icon round'>
               <SiCss3 size={'100%'} color={'#9fc131'} />
