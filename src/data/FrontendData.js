@@ -16,6 +16,7 @@ export const ProjectList = [
     tech: ['vue', 'quasar'],
     desc: 'A web application using Quasar for managing contact information for organisations that containing multiple smaller companies.',
     github: 'https://github.com/leopoldtran8899/quasar-contact-list',
+    demo: 'https://leo-contact-list.surge.sh'
   },
   {
     id: 1,
